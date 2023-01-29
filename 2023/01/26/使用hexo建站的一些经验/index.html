@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="建站的一些经验修改主题前两天运行起来了hexo网站，然后今天对hexo网站进行一些修改。 首先使对主题的修改，在_config.yml文件中修改 1theme: next  这样就指定了theme主题为next，当然，在这之前，需要在themes文件夹中下载好相应的文件才行：  在theme主题中的_congfig.yml中可以将主题修改为暗色模式： 12# Dark Modedarkmode:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用hexo建站的一些经验">
+<meta property="og:url" content="http://example.com/2023/01/26/%E4%BD%BF%E7%94%A8hexo%E5%BB%BA%E7%AB%99%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C/index.html">
+<meta property="og:site_name" content="欢迎回来">
+<meta property="og:description" content="建站的一些经验修改主题前两天运行起来了hexo网站，然后今天对hexo网站进行一些修改。 首先使对主题的修改，在_config.yml文件中修改 1theme: next  这样就指定了theme主题为next，当然，在这之前，需要在themes文件夹中下载好相应的文件才行：  在theme主题中的_congfig.yml中可以将主题修改为暗色模式： 12# Dark Modedarkmode:">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2023/01/26/%E4%BD%BF%E7%94%A8hexo%E5%BB%BA%E7%AB%99%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C/image-20230126151457216.png">
+<meta property="article:published_time" content="2023-01-26T07:01:09.000Z">
+<meta property="article:modified_time" content="2023-01-29T07:56:17.115Z">
+<meta property="article:author" content="张辰">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/01/26/%E4%BD%BF%E7%94%A8hexo%E5%BB%BA%E7%AB%99%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C/image-20230126151457216.png">
+
+<link rel="canonical" href="http://example.com/2023/01/26/%E4%BD%BF%E7%94%A8hexo%E5%BB%BA%E7%AB%99%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>使用hexo建站的一些经验 | 欢迎回来</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="欢迎回来" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">欢迎回来</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">享受生活 热爱游戏 记录学习</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/26/%E4%BD%BF%E7%94%A8hexo%E5%BB%BA%E7%AB%99%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="张辰">
+      <meta itemprop="description" content="记录我学习内容的网站">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="欢迎回来">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          使用hexo建站的一些经验
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-01-26 15:01:09" itemprop="dateCreated datePublished" datetime="2023-01-26T15:01:09+08:00">2023-01-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-01-29 15:56:17" itemprop="dateModified" datetime="2023-01-29T15:56:17+08:00">2023-01-29</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="建站的一些经验"><a href="#建站的一些经验" class="headerlink" title="建站的一些经验"></a>建站的一些经验</h1><h2 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h2><p>前两天运行起来了hexo网站，然后今天对hexo网站进行一些修改。</p>
+<p>首先使对主题的修改，在_config.yml文件中修改</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
+
+<p>这样就指定了theme主题为next，当然，在这之前，需要在themes文件夹中下载好相应的文件才行：</p>
+<p><img src="/2023/01/26/%E4%BD%BF%E7%94%A8hexo%E5%BB%BA%E7%AB%99%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C/image-20230126151457216.png" alt="image-20230126151457216"></p>
+<p>在theme主题中的_congfig.yml中可以将主题修改为暗色模式：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Dark Mode</span></span><br><span class="line"><span class="attr">darkmode:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h2><p>同样使在_config.yml文件中，修改deploy选项：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:Nyquest-unstable/Nyquest-unstable.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<p>在这之前需要，与github形成ssh通讯，否则，无法在github上部署，具体内容我参考了这篇文章：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/60578464">使用 Hexo+GitHub 搭建个人免费博客教程（小白向） - 知乎 (zhihu.com)</a></p>
+<h2 id="Hexo网页使用本地图片"><a href="#Hexo网页使用本地图片" class="headerlink" title="Hexo网页使用本地图片"></a>Hexo网页使用本地图片</h2><p>想要在hexo搭建的服务器网页上显示图片，有两种方法，一种是将图片上传到网络上，在服务器里直接调用网络图片，还有一种方法是，在本地保存图片，在编译静态网页时，将本地图片的地址编译到网页中。</p>
+<p>我采用的方法是在本地的图片缓存方式。首先需要在_config.yml这个文件中 修改：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>这样每次创建文章时，会在同级的目录下创建一个和文章名相同的文件夹，文件夹中可以报错一些富媒体文件。</p>
+<p>其次需要使用**<code>hexo-asset-img</code>**这个插件，由于网络上的这个插件不兼容，并且不能按照github上的那个插件的下载方式下载。应该使用以下方法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install https://github.com/CodeFalling/hexo-asset-image save</span><br></pre></td></tr></table></figure>
+
+<p>但是这样安装的插件，调用图片时是使用的以下的格式：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">image-20230129110142441</span>](<span class="link">image-20230129110142441.jpg</span>)</span><br></pre></td></tr></table></figure>
+
+<p>直接调用了文件，而typora的文章的调用方式则是</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">image-20230129110142441</span>](<span class="link">.\文章名\image-20230129110142441.jpg</span>)</span><br></pre></td></tr></table></figure>
+
+<p>所以需要对插件进行修改，在hexo网站的根目录下找到node_modules文件夹，找到hexo-asset-image</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/11/20/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E5%AD%A6%E6%9C%AF%E8%AE%BA%E6%96%87/" rel="prev" title="如何阅读学术论文">
+      <i class="fa fa-chevron-left"></i> 如何阅读学术论文
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/01/29/img-test/" rel="next" title="img_test">
+      img_test <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BB%BA%E7%AB%99%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C"><span class="nav-number">1.</span> <span class="nav-text">建站的一些经验</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E4%B8%BB%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">修改主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0github"><span class="nav-number">1.2.</span> <span class="nav-text">部署到github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo%E7%BD%91%E9%A1%B5%E4%BD%BF%E7%94%A8%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87"><span class="nav-number">1.3.</span> <span class="nav-text">Hexo网页使用本地图片</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">张辰</p>
+  <div class="site-description" itemprop="description">记录我学习内容的网站</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">张辰</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
