@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-01-24T13:55:19.662Z</updated>
+  <updated>2023-01-29T15:18:05.894Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,22 +17,21 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://example.com/2023/01/29/hello-world/"/>
-    <id>http://example.com/2023/01/29/hello-world/</id>
-    <published>2023-01-29T15:01:21.600Z</published>
-    <updated>2023-01-24T13:55:19.662Z</updated>
+    <title>迁移网站</title>
+    <link href="http://example.com/2023/01/29/%E8%BF%81%E7%A7%BB%E7%BD%91%E7%AB%99/"/>
+    <id>http://example.com/2023/01/29/%E8%BF%81%E7%A7%BB%E7%BD%91%E7%AB%99/</id>
+    <published>2023-01-29T15:14:42.000Z</published>
+    <updated>2023-01-29T15:18:05.894Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="迁移网站"><a href="#迁移网站" class="headerlink" title="迁移网站"></a>迁移网站</h1><p>迁移网站只需要按照这篇文章来就行：<a href="https://blog.csdn.net/eternity1118_/article/details/71194395?ref=myread">(64条消息) hexo：更换电脑，如何继续写博客_eternity1118_的博客-CSDN博客_hexo 换电脑写博文</a></p><span id="more"></span><p>首先第一步，将电脑中的这些文件拷贝出来：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">_config.yml</span><br><span class="line">package.json</span><br><span class="line">scaffolds/</span><br><span class="line"><span class="built_in">source</span>/</span><br><span class="line">themes/</span><br></pre></td></tr></table></figure><p>在目录中安装hexo</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure><p>接下来在目录中执行以下命令来安装插件</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-generator-feed --save</span><br><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure><p>接下来就可以愉快得玩耍了</p>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
-      
+    <summary type="html">&lt;h1 id=&quot;迁移网站&quot;&gt;&lt;a href=&quot;#迁移网站&quot; class=&quot;headerlink&quot; title=&quot;迁移网站&quot;&gt;&lt;/a&gt;迁移网站&lt;/h1&gt;&lt;p&gt;迁移网站只需要按照这篇文章来就行：&lt;a href=&quot;https://blog.csdn.net/eternity1118_/article/details/71194395?ref=myread&quot;&gt;(64条消息) hexo：更换电脑，如何继续写博客_eternity1118_的博客-CSDN博客_hexo 换电脑写博文&lt;/a&gt;&lt;/p&gt;</summary>
     
     
     
+    
+    <category term="网站搭建" scheme="http://example.com/tags/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/"/>
     
   </entry>
   
@@ -41,7 +40,7 @@
     <link href="http://example.com/2023/01/29/git%E7%9A%84%E4%BB%A3%E7%90%86%E9%97%AE%E9%A2%98/"/>
     <id>http://example.com/2023/01/29/git%E7%9A%84%E4%BB%A3%E7%90%86%E9%97%AE%E9%A2%98/</id>
     <published>2023-01-29T13:51:35.000Z</published>
-    <updated>2023-01-29T13:54:37.246Z</updated>
+    <updated>2023-01-29T15:14:24.226Z</updated>
     
     <content type="html"><![CDATA[<h1 id="关于git的代理"><a href="#关于git的代理" class="headerlink" title="关于git的代理"></a>关于git的代理</h1><p>今天一天遇到了一个问题：、</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure><p>说是端口无法打开。在网上找了一圈，说是代理的问题，我之前一直没有遇到过，或者遇到过但是忘记了。</p><p>由于我是使用的clash作为代理，其代理地址为127.0.0.1：7890，修改成这个代理地址就解决问题了。</p>]]></content>
     
