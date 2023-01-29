@@ -240,7 +240,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-01-29 21:51:35 / 修改时间：23:14:24" itemprop="dateCreated datePublished" datetime="2023-01-29T21:51:35+08:00">2023-01-29</time>
+              <time title="创建时间：2023-01-29 21:51:35 / 修改时间：23:19:08" itemprop="dateCreated datePublished" datetime="2023-01-29T21:51:35+08:00">2023-01-29</time>
             </span>
 
           
@@ -256,12 +256,14 @@
       
           <h1 id="关于git的代理"><a href="#关于git的代理" class="headerlink" title="关于git的代理"></a>关于git的代理</h1><p>今天一天遇到了一个问题：、</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<p>说是端口无法打开。在网上找了一圈，说是代理的问题，我之前一直没有遇到过，或者遇到过但是忘记了。</p>
-<p>由于我是使用的clash作为代理，其代理地址为127.0.0.1：7890，修改成这个代理地址就解决问题了。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/01/29/git%E7%9A%84%E4%BB%A3%E7%90%86%E9%97%AE%E9%A2%98/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -305,7 +307,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-01-29 11:01:26 / 修改时间：11:23:50" itemprop="dateCreated datePublished" datetime="2023-01-29T11:01:26+08:00">2023-01-29</time>
+              <time title="创建时间：2023-01-29 11:01:26 / 修改时间：23:19:14" itemprop="dateCreated datePublished" datetime="2023-01-29T11:01:26+08:00">2023-01-29</time>
             </span>
 
           
@@ -319,7 +321,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><img src="/2023/01/29/img-test/image-20230129110142441.jpg" alt="image-20230129110142441"></p>
+          <span id="more"></span>
+<p><img src="/2023/01/29/img-test/image-20230129110142441.jpg" alt="image-20230129110142441"></p>
 
       
     </div>
@@ -370,7 +373,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-01-29 15:56:17" itemprop="dateModified" datetime="2023-01-29T15:56:17+08:00">2023-01-29</time>
+                <time title="修改时间：2023-01-29 23:19:05" itemprop="dateModified" datetime="2023-01-29T23:19:05+08:00">2023-01-29</time>
               </span>
 
           
@@ -386,33 +389,14 @@
       
           <h1 id="建站的一些经验"><a href="#建站的一些经验" class="headerlink" title="建站的一些经验"></a>建站的一些经验</h1><h2 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h2><p>前两天运行起来了hexo网站，然后今天对hexo网站进行一些修改。</p>
 <p>首先使对主题的修改，在_config.yml文件中修改</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
-
-<p>这样就指定了theme主题为next，当然，在这之前，需要在themes文件夹中下载好相应的文件才行：</p>
-<p><img src="/2023/01/26/%E4%BD%BF%E7%94%A8hexo%E5%BB%BA%E7%AB%99%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C/image-20230126151457216.png" alt="image-20230126151457216"></p>
-<p>在theme主题中的_congfig.yml中可以将主题修改为暗色模式：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Dark Mode</span></span><br><span class="line"><span class="attr">darkmode:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h2><p>同样使在_config.yml文件中，修改deploy选项：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:Nyquest-unstable/Nyquest-unstable.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-
-<p>在这之前需要，与github形成ssh通讯，否则，无法在github上部署，具体内容我参考了这篇文章：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/60578464">使用 Hexo+GitHub 搭建个人免费博客教程（小白向） - 知乎 (zhihu.com)</a></p>
-<h2 id="Hexo网页使用本地图片"><a href="#Hexo网页使用本地图片" class="headerlink" title="Hexo网页使用本地图片"></a>Hexo网页使用本地图片</h2><p>想要在hexo搭建的服务器网页上显示图片，有两种方法，一种是将图片上传到网络上，在服务器里直接调用网络图片，还有一种方法是，在本地保存图片，在编译静态网页时，将本地图片的地址编译到网页中。</p>
-<p>我采用的方法是在本地的图片缓存方式。首先需要在_config.yml这个文件中 修改：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>这样每次创建文章时，会在同级的目录下创建一个和文章名相同的文件夹，文件夹中可以报错一些富媒体文件。</p>
-<p>其次需要使用**<code>hexo-asset-img</code>**这个插件，由于网络上的这个插件不兼容，并且不能按照github上的那个插件的下载方式下载。应该使用以下方法：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install https://github.com/CodeFalling/hexo-asset-image save</span><br></pre></td></tr></table></figure>
-
-<p>但是这样安装的插件，调用图片时是使用的以下的格式：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">image-20230129110142441</span>](<span class="link">image-20230129110142441.jpg</span>)</span><br></pre></td></tr></table></figure>
-
-<p>直接调用了文件，而typora的文章的调用方式则是</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">image-20230129110142441</span>](<span class="link">.\文章名\image-20230129110142441.jpg</span>)</span><br></pre></td></tr></table></figure>
-
-<p>所以需要对插件进行修改，在hexo网站的根目录下找到node_modules文件夹，找到hexo-asset-image</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/01/26/%E4%BD%BF%E7%94%A8hexo%E5%BB%BA%E7%AB%99%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -462,7 +446,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-01-24 22:40:43" itemprop="dateModified" datetime="2023-01-24T22:40:43+08:00">2023-01-24</time>
+                <time title="修改时间：2023-01-29 23:19:01" itemprop="dateModified" datetime="2023-01-29T23:19:01+08:00">2023-01-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -486,26 +470,14 @@
 
       
           <h1 id="如何看论文"><a href="#如何看论文" class="headerlink" title="如何看论文"></a>如何看论文</h1><p>首先是看标题综述，先看一下这篇文章干了什么，创新点是什么，总结出几个要点。在后续看论文的时候可以线找到论文中这几个要点，然后扩散到整个文章。总结要点时可以参考论文中给出的关键词。</p>
-<p>比如我之前的看的这篇论文：《Lyapunov-Based Real-Time and Iterative Adjustment of Deep Neural Networks》中的综述部分：</p>
-<p><img src="http://192.168.31.111/WordPress/wp-content/uploads/2022/11/image-20221120183742140-1-256x300.png"></p>
-<p>从标题中可以获得几个关键信息：Lyapunov，Deep Neural Networks, Real-Time, Adjustment。</p>
-<p><strong>Lyapunov</strong>第一法在非线性控制系统状态反馈控制中经常用到，包括但不限于反馈控制，自适应控制，鲁棒控制，滑膜控制，高增益控制，高频率控制等。由于其自身可以构建<strong>Lyapunov函数</strong>可以将复杂的分析简化为分析函数的正定和负定，进而得到系统的稳定性以及设计系统的状态变量的运动轨迹。</p>
-<p><strong>Deep Neural Networks</strong>深度神经网络具有广泛的应用前景。根据模型的不同可以适配不同的任务。从标题中无法得出神经网络是用来做什么任务的，进一步的了解需要读摘要。</p>
-<p><strong>Real-TIme</strong>这个系统时实时的，注定了这个神经网络不会太深，估计最多是四五层的样子。如果神经网络过于复杂，推理起来用时过长的话，无法达到实时这一目标。</p>
-<p><strong>Adjusment</strong>表示本文中一定会出现参数更新的部分。</p>
-<h3 id="摘要部分"><a href="#摘要部分" class="headerlink" title="摘要部分"></a>摘要部分</h3><p>摘要第一句话就清楚的给出了这个实时深度神经网络是针对一般的不确定的非线性动态系统，追踪期望的轨迹。</p>
-<p>李亚普诺夫函数用来设计DNN网络的外层的输出权重。而数据驱动的监督学习算法则是用来更新内层的参数。</p>
-<p>内层的训练参数是在仿真过程中收集起来的。</p>
-<blockquote>
-<p>插入一条：如果看不懂英文的话可以使用翻译软件翻译，但是最好不要全文翻译，因为全文翻译质量不好，很容易将意思带偏。翻译最好精确到单词。我一直使用的Xtranslator这个软件就很好用</p>
-</blockquote>
-<p><img src="http://192.168.31.111/WordPress/wp-content/uploads/2022/11/image-20221120191257980-1-300x124.png"></p>
-<p>图中，标黄的部分是则是说明了，本篇论文是基于对已知的论文上做了改进：对已知的非线性控制部分变为了不确定的非线性部分，主要是针对不确定的非线性部分进行控制。</p>
-<p>最后讲明了针对非线性系统的控制器设计，以及神经网络的更新方法。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>摘要部分包含了论文的大部分信息，需要详细阅读，大概读两三遍，争取每个字词都弄清楚时什么意思。之后针对关键词进行相应知识的补充。论文中的研究部分一定会基于那些的基础来进行设计的。</p>
-<p>比如我之前只知道Lyapunov函数只能用来判断系统的稳定性，学到最后才发现，原来还可以用来设计控制器。如果我能提前学习一下相关知识，我相信在理解这部分论文时应该时如鱼得水。</p>
-<p>需要继续深造相关的数学知识，因为在分析李亚普诺夫函数的时候，我发现有些步骤我很难做下去，比如对矩阵求导数，或者对不连续的函数进行求导。这些是我的知识盲区。还有后续的求解广义逆矩阵，我虽然知道广义逆矩阵的用法，但是并不会求解，导致很难设计论文。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/11/20/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E5%AD%A6%E6%9C%AF%E8%AE%BA%E6%96%87/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -555,7 +527,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-01-24 22:40:43" itemprop="dateModified" datetime="2023-01-24T22:40:43+08:00">2023-01-24</time>
+                <time title="修改时间：2023-01-29 23:18:55" itemprop="dateModified" datetime="2023-01-29T23:18:55+08:00">2023-01-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -579,21 +551,14 @@
 
       
           <h2 id="建站的心路历程"><a href="#建站的心路历程" class="headerlink" title="建站的心路历程"></a>建站的心路历程</h2><p>很久之前就想建一个自己的博客，奈何自己一直都没有时间。这两天闲下来了，正好想着能不能利用我手头的嵌入式开发板搭建一个自己的博客。于是就有了这个网站。我还有很多的带解决的问题。这篇文章主要记录一下我的建站的过程以及还有的问题。</p>
-<h3 id="建站第一步"><a href="#建站第一步" class="headerlink" title="建站第一步"></a>建站第一步</h3><p>我是跟着这个[<a target="_blank" rel="noopener" href="https://blog.haibara.cn/archives/86">在Armbian上搭建博客)</a>]开始的，因为我手头正好有一块orangepi zero2的板子，其核心是arm架构的嵌入式开发板。之前我在b站搜索的相关的网站搭建教程好像都是基于x64&#x2F;x86架构的芯片。导致我在建站的过程中遇到了各种各样的问题，主要我主要做的不是网站开发什么的，遇到问题我也看不懂，所以每次都是做到一半只能放弃。关于php建站的知识我可以说是完全没有。</p>
-<p>跟着文章来搭建网站就顺利很多了。跟着网站我也学到了很多东西。首先是配置LNMP 四个字母代表四种不同的技术。</p>
-<p>L代表的是Linux技术，因为我主要学嵌入式开发，所以对嵌入式linux还是比较熟悉的，所以这一部分我属于是轻车熟路了。</p>
-<p>N代表的是nginx技术， nginx技术是一种http服务器技术，主要用来提供网络服务的，这一部分我完全不了解，毕竟之前完全没有接触过网络相关的知识，就算接触到过，由于完全没有用上，估计也忘得差不多了。</p>
-<p>M代表的MySql或者MariaDB技术，这是数据库技术，之前建站的时候有遇到过。当时就是卡在了数据库上，所以放弃了，好在这一次很顺利，在安装数据库支持时没有多少报错。</p>
-<p>P代表的时PHP技术，这是一种网站搭建技术，在我本科的时候听我本科同学提到过这种技术，当时对这种技术没有太多的了解，而且当时的重心在单片机这样的嵌入式设备上，主要使用的时C语言，主要和寄存器什么的打交道。所以也没有太关心。</p>
-<p>在配置LNMP技术过程中，除了要下载相应的技术支持外，还需要进行一些相应的配置，主要时ngnix中，需要打开对PHP的支持，这里面总共有五个地方需要修改，当时我就是少修改了一处地方导致最后php没有加载，排除错误排除了有一个小时。之后是配置数据库，这一部分我也不是很理解，当时也出现了相关问题，最后我在<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42189863/article/details/125113978">垃圾堆</a>里找到了相应的解决方案。我在网站搭建方面属于是小白中的小白，所以在垃圾堆里抛食，可能正好合适，哈哈哈。</p>
-<h3 id="第二步-管理数据库"><a href="#第二步-管理数据库" class="headerlink" title="第二步 管理数据库"></a>第二步 管理数据库</h3><p>管理数据库，根据教程我使用的是phpMyAdmin，用php开发的免费软件，可以让你在Web界面管理你的MySQL&#x2F;MariaDB数据库，无需学习数据库的命令，pma是新人站长的福音。由于pma是基于php开发的，所以<strong>安装pma跟搭建网站没什么区别</strong>，同样需要你提前<strong>搭建好LNMP环境</strong>。</p>
-<p>这一步很顺利，直接就可以显示管理界面。</p>
-<h3 id="最后一步"><a href="#最后一步" class="headerlink" title="最后一步"></a>最后一步</h3><p>将下载好的wordpress的包塞进&#x2F;var&#x2F;www&#x2F;html文件中就完事了，搭建完网站后，搭建网页还是相对比较容易的，尤其是使用php方法搭建的网站，目前是使用现成的部分所以和操作起来还是比较容易。之后为wordpress创建数据库，再在woedpress中配置相应的数据库就行了。</p>
-<p>目前我的密码是我常用密码中的一个，已经记录在了浏览器中，所以问题不大。</p>
-<p>最后加载markdown的插件，完成!</p>
-<h2 id="待解决的问题"><a href="#待解决的问题" class="headerlink" title="待解决的问题"></a>待解决的问题</h2><h3 id="外网访问"><a href="#外网访问" class="headerlink" title="外网访问"></a>外网访问</h3><p>我建立的blog网站，需要能外网访问才有意义，如果不能外网访问，只能局域网访问，那就一点意义都没有</p>
-<h3 id="本地浏览"><a href="#本地浏览" class="headerlink" title="本地浏览"></a>本地浏览</h3><p>虽然建立了数据库，我最好有办法在本地浏览我的文章，因为我不知道哪天我的服务器会崩，但是主题在我旁边，如果有办法通过本地访问文件的方法访问数据库就能很好得保护我本地得数据。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/11/20/%E5%BB%BA%E7%AB%99%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
