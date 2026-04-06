@@ -1,0 +1,40 @@
+# Hexo
+node_modules/
+public/
+.deploy*/
+db.json
+.cache/
+_multiconfig.yml
+
+# RAG
+rag_struct/index_data/
+rag_struct/__pycache__/
+*.pyc
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.so
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.local
+
+# Build artifacts
+*.log

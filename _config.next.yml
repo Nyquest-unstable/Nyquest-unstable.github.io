@@ -1,0 +1,62 @@
+scheme: Muse
+
+menu:
+  home: / || fa fa-home
+  archives: /archives/ || fa fa-archive
+  categories: /categories/ || fa fa-th
+  tags: /tags/ || fa fa-tags
+  resume: /resume/ || fa fa-user
+
+menu_settings:
+  icons: true
+  badges: false
+
+custom_file_path:
+  style: source/_data/styles.styl
+
+sidebar:
+  position: left
+  display: post
+  padding: 18
+  offset: 12
+  onmobile: false
+
+avatar:
+  url: /images/avatar.gif
+  rounded: false
+  rotated: false
+
+favicon:
+  small: /images/favicon-16x16-next.png
+  medium: /images/favicon-32x32-next.png
+  apple_touch_icon: /images/apple-touch-icon-next.png
+  safari_pinned_tab: /images/logo.svg
+
+vendors:
+  anime: /lib/anime.min.js
+  fontawesome: /lib/font-awesome/css/all.min.css
+
+back2top:
+  enable: true
+  sidebar: false
+  scrollpercent: false
+
+bookmark:
+  enable: false
+
+copycode:
+  enable: false
+
+fancybox: false
+mediumzoom: false
+lazyload: false
+pangu: false
+
+local_search:
+  enable: true
+
+motion:
+  enable: false
+
+footer:
+  since: 2023

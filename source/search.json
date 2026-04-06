@@ -1,0 +1,62 @@
+[
+  {
+    "title": "git的代理问题",
+    "url": "/2023/01/29/git的代理问题/",
+    "content": "# 关于 git 的代理\n\n今天一天遇到了一个问题：\n\n```bash\n\n```\n\n<!-- more -->\n\n说是端口无法打开。在网上找了一圈，说是代理的问题，我之前一直没有遇到过，或者遇到过但是忘记了。\n\n由于我是使用的 clash 作为代理，其代理地址为 `127.0.0.1:7890`，修改成这个代理地址就解决问题了。\n",
+    "date": "2023-01-29T21:51:35.000Z"
+  },
+  {
+    "title": "img_test",
+    "url": "/2023/01/29/img_test/",
+    "content": "<!-- more -->\n\n![image-20230129110142441](./image-20230129110142441.jpg)\n",
+    "date": "2023-01-29T11:01:26.000Z"
+  },
+  {
+    "title": "使用hexo建站的一些经验",
+    "url": "/2023/01/26/使用hexo建站的一些经验/",
+    "content": "# 建站的一些经验\n\n## 修改主题\n\n前两天运行起来了 Hexo 网站，然后今天对 Hexo 网站进行一些修改。\n\n首先是对主题的修改，在 `_config.yml` 文件中修改：\n\n<!-- more -->\n\n```yml\ntheme: next\n```\n\n这样就指定了 `theme` 主题为 `next`，当然在这之前，需要在 `themes` 文件夹中下载好相应的文件才行：\n\n![theme files](./image-20230126151457216.png)\n\n在 theme 主题中的 `_config.yml` 中可以将主题修改为暗色模式：\n\n```yml\n# Dark Mode\ndarkmode: true\n```\n\n## 部署到 GitHub\n\n同样是在 `_config.yml` 文件中，修改 `deploy` 选项：\n\n```yml\n# Deployment\n## Docs: https://hexo.io/docs/one-command-deployment\ndeploy:\n  type: git\n  repository: git@github.com:Nyquest-unstable/Nyquest-unstable.github.io.git\n  branch: master\n```\n\n在这之前需要与 GitHub 形成 SSH 通讯，否则无法在 GitHub 上部署。具体内容我参考了这篇文章：[使用 Hexo+GitHub 搭建个人免费博客教程（小白向）](https://zhuanlan.zhihu.com/p/60578464)。\n\n## Hexo 网页使用本地图片\n\n想要在 Hexo 搭建的网页上显示图片，有两种方法。一种是将图片上传到网络上，在服务器里直接调用网络图片；还有一种方法是，在本地保存图片，在编译静态网页时，将本地图片的地址编译到网页中。\n\n我采用的方法是本地图片缓存。首先需要在 `_config.yml` 里修改：\n\n```yml\npost_asset_folder: true\n```\n\n这样每次创建文章时，会在同级目录下创建一个和文章名相同的文件夹，文件夹中可以保存一些富媒体文件。\n\n其次需要使用 `hexo-asset-img` 这个插件。由于网络上的这个插件不兼容，并且不能按照 GitHub 上那个插件的下载方式下载，应该使用以下方法：\n\n```bash\nnpm install https://github.com/CodeFalling/hexo-asset-image save\n```\n\n但是这样安装的插件，调用图片时使用的是以下格式：\n\n```markdown\n![image-20230129110142441](image-20230129110142441.jpg)\n```\n\n直接调用了文件，而 Typora 文章中的调用方式则是：\n\n```markdown\n![image-20230129110142441](.\\文章名\\image-20230129110142441.jpg)\n```\n\n所以需要对插件进行修改，在 Hexo 网站的根目录下找到 `node_modules` 文件夹，再找到 `hexo-asset-image`。\n",
+    "date": "2023-01-26T15:01:09.000Z"
+  },
+  {
+    "title": "如何阅读学术论文",
+    "url": "/2022/11/20/如何阅读学术论文/",
+    "content": "# 如何看论文\n\n首先是看标题和综述，先看一下这篇文章干了什么，创新点是什么，总结出几个要点。在后续看论文的时候可以先定位论文中这几个要点，然后再扩散到整个文章。总结要点时可以参考论文中给出的关键词。\n\n<!-- more -->\n\n比如我之前看的这篇论文：《Lyapunov-Based Real-Time and Iterative Adjustment of Deep Neural Networks》中的综述部分：\n\n![Missing original image](./missing-figure-1.svg)\n\n从标题中可以获得几个关键信息：Lyapunov、Deep Neural Networks、Real-Time、Adjustment。\n\n**Lyapunov** 第一法在非线性控制系统状态反馈控制中经常用到，包括但不限于反馈控制、自适应控制、鲁棒控制、滑模控制、高增益控制、高频率控制等。由于其自身可以构建 **Lyapunov 函数**，可以将复杂分析简化为分析函数的正定和负定，进而得到系统的稳定性以及设计系统状态变量的运动轨迹。\n\n**Deep Neural Networks** 深度神经网络具有广泛的应用前景。根据模型的不同可以适配不同的任务。从标题中无法得出神经网络是用来做什么任务的，进一步了解需要读摘要。\n\n**Real-Time** 说明这个系统是实时的，注定了这个神经网络不会太深，估计最多是四五层的样子。如果神经网络过于复杂，推理起来耗时过长，就无法达到实时这个目标。\n\n**Adjustment** 表示本文中一定会出现参数更新的部分。\n\n### 摘要部分\n\n摘要第一句话就清楚地给出了这个实时深度神经网络是针对一般的不确定非线性动态系统，用来追踪期望轨迹的。\n\n李亚普诺夫函数用来设计 DNN 网络外层的输出权重，而数据驱动的监督学习算法则是用来更新内层参数的。\n\n内层训练参数是在仿真过程中收集起来的。\n\n> 插入一条：如果看不懂英文的话可以使用翻译软件翻译，但是最好不要全文翻译，因为全文翻译质量不好，很容易将意思带偏。翻译最好精确到单词。我一直使用的 Xtranslator 这个软件就很好用。\n\n![Missing original image](./missing-figure-2.svg)\n\n图中标黄的部分说明了，本篇论文是在已知论文的基础上做改进：把已知的非线性控制部分变为不确定的非线性部分，主要是针对不确定的非线性部分进行控制。\n\n最后讲明了针对非线性系统的控制器设计，以及神经网络的更新方法。\n\n## 总结\n\n摘要部分包含了论文的大部分信息，需要详细阅读，大概读两三遍，争取每个字词都弄清楚是什么意思。之后再针对关键词进行相应知识的补充。论文中的研究部分一定会基于那些基础来进行设计。\n\n比如我之前只知道 Lyapunov 函数只能用来判断系统稳定性，学到最后才发现原来还可以用来设计控制器。如果我能提前学习一些相关知识，我相信在理解这部分论文时应该会如鱼得水。\n\n需要继续深造相关的数学知识，因为在分析李亚普诺夫函数的时候，我发现有些步骤我很难做下去，比如对矩阵求导，或者对不连续函数求导。这些是我的知识盲区。还有后续求解广义逆矩阵，我虽然知道广义逆矩阵的用法，但是并不会求解，导致很难设计论文。\n",
+    "date": "2022-11-20T19:35:57.000Z"
+  },
+  {
+    "title": "建站的第一篇文章",
+    "url": "/2022/11/20/建站的第一篇文章/",
+    "content": "## 建站的心路历程\n\n很久之前就想建一个自己的博客，奈何自己一直都没有时间。这两天闲下来了，正好想着能不能利用我手头的嵌入式开发板搭建一个自己的博客。于是就有了这个网站。我还有很多待解决的问题。这篇文章主要记录一下我的建站过程以及还有的问题。\n\n<!-- more -->\n\n### 建站第一步\n\n我是跟着这篇文章 [在 Armbian 上搭建博客](https://blog.haibara.cn/archives/86) 开始的，因为我手头正好有一块 orangepi zero2 的板子，其核心是 ARM 架构的嵌入式开发板。之前我在 B 站搜索到的网站搭建教程好像大多都是基于 x64/x86 架构的芯片，导致我在建站过程中遇到了各种各样的问题。主要是我本身并不是做网站开发的，遇到问题很多时候也看不懂，所以每次做到一半就只能放弃。关于 PHP 建站的知识我可以说是完全没有。\n\n跟着文章来搭建网站就顺利很多了。跟着网站我也学到了很多东西。首先是配置 LNMP，四个字母代表四种不同的技术。\n\nL 代表的是 Linux 技术，因为我主要学嵌入式开发，所以对嵌入式 Linux 还是比较熟悉的，这一部分属于轻车熟路。\n\nN 代表的是 nginx 技术，nginx 是一种 HTTP 服务器技术，主要用来提供网络服务。这一部分我完全不了解，毕竟之前完全没有接触过网络相关的知识，就算接触到过，由于完全没有用上，估计也忘得差不多了。\n\nM 代表的是 MySQL 或者 MariaDB 技术，这是数据库技术。之前建站的时候也遇到过，当时就是卡在了数据库上，所以放弃了。好在这一次很顺利，在安装数据库支持时没有多少报错。\n\nP 代表的是 PHP 技术，这是一种网站搭建技术。在我本科的时候听同学提到过这种技术，当时了解不多，而且那时候重心在单片机这样的嵌入式设备上，主要使用 C 语言，和寄存器打交道比较多，所以没有太关心。\n\n在配置 LNMP 的过程中，除了下载相应的技术支持外，还需要做一些配置，主要是在 nginx 中打开对 PHP 的支持。这里面总共有五个地方需要修改，当时我就是少改了一处地方，导致最后 PHP 没有加载，排查错误排了一个多小时。之后是配置数据库，这一部分我也不是很理解，当时也出现了相关问题，最后我在 [垃圾堆](https://blog.csdn.net/weixin_42189863/article/details/125113978) 里找到了相应的解决方案。我在网站搭建方面属于是小白中的小白，所以在垃圾堆里刨食可能正好合适，哈哈哈。\n\n### 第二步 管理数据库\n\n管理数据库时，根据教程我使用的是 phpMyAdmin。它是一个用 PHP 开发的免费软件，可以让你在 Web 界面管理 MySQL/MariaDB 数据库，无需学习数据库命令，pma 是新人站长的福音。由于 pma 是基于 PHP 开发的，所以**安装 pma 跟搭建网站没什么区别**，同样需要你提前**搭建好 LNMP 环境**。\n\n这一步很顺利，直接就可以显示管理界面。\n\n### 最后一步\n\n将下载好的 WordPress 包塞进 `/var/www/html` 文件夹中就完事了。搭建完网站后，再去搭建网页就相对容易了，尤其是使用 PHP 方法搭建的网站，目前使用的很多都是现成部分，所以操作起来还是比较容易。之后为 WordPress 创建数据库，再在 WordPress 中配置相应的数据库就行了。\n\n目前我的密码是我常用密码中的一个，已经记录在浏览器中，所以问题不大。\n\n最后加载 markdown 插件，完成！\n\n## 待解决的问题\n\n### 外网访问\n\n我建立的 blog 网站，需要能被外网访问才有意义。如果不能外网访问，只能局域网访问，那就一点意义都没有。\n\n### 本地浏览\n\n虽然建立了数据库，我最好还是有办法在本地浏览我的文章，因为我不知道哪天服务器会崩，但是主题就在我身边。如果有办法通过本地访问文件的方法访问数据库，就能更好地保护本地数据。\n",
+    "date": "2022-11-20T10:43:05.000Z"
+  },
+  {
+    "title": "迁移网站",
+    "url": "/2023/01/29/迁移网站/",
+    "content": "# 迁移网站\n\n迁移网站只需要按照这篇文章来就行：[hexo：更换电脑，如何继续写博客](https://blog.csdn.net/eternity1118_/article/details/71194395?ref=myread)\n\n<!-- more -->\n\n首先第一步，将电脑中的这些文件拷贝出来：\n\n```bash\n_config.yml\npackage.json\nscaffolds/\nsource/\nthemes/\n```\n\n在目录中安装 hexo：\n\n```bash\nnpm install -g hexo\n```\n\n接下来在目录中执行以下命令来安装插件：\n\n```bash\nnpm install\nnpm install hexo-deployer-git --save\nnpm install hexo-generator-feed --save\nnpm install hexo-generator-sitemap --save\n```\n\n接下来就可以愉快地玩耍了。\n",
+    "date": "2023-01-29T23:14:42.000Z"
+  },
+  {
+    "title": "分类",
+    "url": "/categories",
+    "content": "",
+    "date": "2026-04-06T16:52:58.000Z"
+  },
+  {
+    "title": "Welcom Back Nyquest",
+    "url": "/index",
+    "content": "<div style=\"padding: 5rem 1.5rem 3rem; text-align: center;\">\n  <p style=\"margin: 0 0 1rem; font-size: 0.95rem; letter-spacing: 0.28em; text-transform: uppercase; color: #666;\">\n    Personal Blog\n  </p>\n  <h1 style=\"margin: 0; font-size: clamp(3.5rem, 12vw, 6.5rem); line-height: 1; letter-spacing: 0.08em;\">\n    Nyquest\n  </h1>\n  <p style=\"max-width: 42rem; margin: 1.5rem auto 0; font-size: 1.1rem; line-height: 1.9; color: #555;\">\n    人心中的辰见，犹如一座大山\n  </p>\n  <p style=\"margin-top: 2rem;\">\n    <a href=\"/posts/\" style=\"display: inline-block; padding: 0.9rem 1.6rem; border: 1px solid #222; text-decoration: none;\">\n      进入文章列表\n    </a>\n  </p>\n</div>\n\n## 你可以从这里开始\n\n- [浏览全部文章](/posts/)\n- [网站技术分类](/categories/%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF/)\n- [学术论文分类](/categories/%E5%AD%A6%E6%9C%AF%E8%AE%BA%E6%96%87/)\n\n## 当前内容\n\n- 建站过程与迁移记录\n- Hexo 使用经验\n- Git 代理问题记录\n- 学术论文阅读笔记\n\n## 说明\n\n这个站点现在已经重建为 Hexo 源仓库，后续内容会继续从这里维护并发布到 GitHub Pages。\n",
+    "date": "2026-04-06T16:52:58.000Z"
+  },
+  {
+    "title": "我的简历",
+    "url": "/resume",
+    "content": "## 个人信息\n\n[在此添加您的简历内容]\n\n## 教育背景\n\n[在此添加教育信息]\n\n## 工作经历\n\n[在此添加工作经历]\n\n## 技能特长\n\n[在此添加技能信息]\n\n## 项目经验\n\n[在此添加项目经验]\n",
+    "date": "2026-04-06T16:52:58.000Z"
+  },
+  {
+    "title": "标签",
+    "url": "/tags",
+    "content": "",
+    "date": "2026-04-06T16:52:58.000Z"
+  }
+]

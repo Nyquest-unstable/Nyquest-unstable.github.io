@@ -1,0 +1,2 @@
+# RAG Architecture Dependencies
+jieba>=0.42.1  # Chinese word segmentation for TF-IDF
