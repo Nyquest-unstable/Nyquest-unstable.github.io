@@ -15,6 +15,7 @@ from pathlib import Path
 POSTS_DIR = Path(__file__).parent.parent / "source" / "_posts"
 PAGES_DIR = Path(__file__).parent.parent / "source"
 INDEX_FILE = Path(__file__).parent / "index_data" / "articles.json"
+SITE_PROFILE_FILE = Path(__file__).parent.parent / "source" / "_data" / "site_profile.yml"
 
 
 def slugify(text):
@@ -76,10 +77,68 @@ def extract_excerpt(content, max_length=200):
     return content.strip()[:max_length]
 
 
+def load_site_profile():
+    """Load the centralized site profile data."""
+    profile = {}
+
+    if not SITE_PROFILE_FILE.exists():
+        return profile
+
+    with open(SITE_PROFILE_FILE, "r", encoding="utf-8") as f:
+        for raw_line in f:
+            line = raw_line.strip()
+            if not line or line.startswith("#") or ":" not in line:
+                continue
+            key, value = line.split(":", 1)
+            profile[key.strip()] = value.strip().strip("'\"")
+
+    return profile
+
+
+def render_site_profile_tag(mode, profile):
+    """Render site_profile tags into markdown content."""
+    github_url = profile.get("github_url", "")
+    email = profile.get("email", "")
+    resume_path = profile.get("resume_path", "/resume/")
+    summary_short = profile.get("summary_short", "")
+
+    contact_lines = [
+        f"- GitHub：<{github_url}>",
+        f"- 邮箱：`{email}`"
+    ]
+
+    if mode == "contact":
+        return "\n".join(contact_lines)
+
+    if mode == "about_contact":
+        lines = []
+        if summary_short:
+            lines.extend([summary_short, ""])
+        lines.extend(contact_lines)
+        lines.append(f"- 详细介绍与服务方向：[关于我]({resume_path})")
+        return "\n".join(lines)
+
+    return ""
+
+
+def expand_custom_tags(content):
+    """Expand the small subset of custom tags used in source markdown."""
+    profile = load_site_profile()
+
+    def replace_site_profile(match):
+        mode = (match.group(1) or "contact").strip()
+        rendered = render_site_profile_tag(mode, profile)
+        return rendered or match.group(0)
+
+    return re.sub(r"{%\s*site_profile(?:\s+([a-zA-Z0-9_]+))?\s*%}", replace_site_profile, content)
+
+
 def parse_markdown_file(filepath):
     """Parse a markdown file and extract article metadata."""
     with open(filepath, "r", encoding="utf-8") as f:
         content = f.read()
+
+    content = expand_custom_tags(content)
 
     frontmatter = extract_frontmatter(content)
     excerpt = extract_excerpt(content)

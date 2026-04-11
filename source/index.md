@@ -65,8 +65,4 @@ sidebar: false
 
 ## 关于我与联系
 
-Nyquest，华东理工大学控制科学与工程背景，现从事嵌入式软件工程相关工作，持续输出嵌入式、GEO、RAG 与机器人方向内容。
-
-- GitHub：<https://github.com/Nyquest-unstable>
-- 邮箱：`contact@nyquest.dev`
-- 详细介绍与服务方向：[关于我](/resume/)
+{% site_profile about_contact %}

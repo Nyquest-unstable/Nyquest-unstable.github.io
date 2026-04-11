@@ -59,5 +59,4 @@ sidebar: false
 
 ## 联系方式
 
-- GitHub：<https://github.com/Nyquest-unstable>
-- 邮箱：`contact@nyquest.dev`
+{% site_profile contact %}
