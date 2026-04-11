@@ -7,3 +7,107 @@
     vertical-align: middle;
   }
 }
+
+.site-author-card-shell {
+  display: flex;
+  justify-content: center;
+}
+
+.site-author-card-face {
+  align-items: stretch;
+  display: flex;
+  justify-content: center;
+  min-height: 168px;
+  min-width: 116px;
+}
+
+.site-author-image-fallback {
+  border: 1px solid rgba(15, 23, 42, .12);
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, .16);
+  display: block;
+  max-width: 116px;
+  padding: 0;
+}
+
+.site-author-playing-card {
+  background: linear-gradient(165deg, #fffdf8 0%, #ffffff 72%, #f3efe6 100%);
+  border: 1px solid rgba(15, 23, 42, .14);
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, .16);
+  color: #111827;
+  display: grid;
+  grid-template-areas: 'top' 'center' 'bottom';
+  grid-template-rows: auto 1fr auto;
+  height: 168px;
+  padding: 10px;
+  position: relative;
+  width: 116px;
+}
+
+.site-author-playing-card.is-red {
+  color: #b91c1c;
+}
+
+.site-author-playing-card.is-joker {
+  background: linear-gradient(180deg, #fff7ed 0%, #fffbeb 45%, #ffffff 100%);
+  color: #7c2d12;
+}
+
+.playing-card-corner {
+  display: inline-flex;
+  flex-direction: column;
+  font-family: 'Times New Roman', serif;
+  font-weight: 700;
+  gap: 2px;
+  line-height: 1;
+}
+
+.playing-card-corner.top {
+  grid-area: top;
+  justify-self: start;
+}
+
+.playing-card-corner.bottom {
+  grid-area: bottom;
+  justify-self: end;
+  transform: rotate(180deg);
+}
+
+.playing-card-corner .rank {
+  font-size: 1.2rem;
+}
+
+.playing-card-corner .suit {
+  font-size: 1rem;
+}
+
+.playing-card-center {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Times New Roman', serif;
+  gap: 6px;
+  grid-area: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.playing-card-center .rank {
+  font-size: 2.6rem;
+  font-weight: 700;
+}
+
+.playing-card-center .suit {
+  font-size: 2.2rem;
+}
+
+.playing-card-joker-word {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+}
+
+.playing-card-joker-mark {
+  font-size: 2.4rem;
+}
