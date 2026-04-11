@@ -2,10 +2,14 @@ scheme: Muse
 
 menu:
   home: / || fa fa-home
-  archives: /archives/ || fa fa-archive
+  about: /resume/ || fa fa-user
+  embedded: /embedded-solutions/ || fa fa-microchip
+  geo: /geo-solutions/ || fa fa-globe
+  rag: /rag-solutions/ || fa fa-database
+  robotics: /robotics-solutions/ || fa fa-robot
+  posts: /posts/ || fa fa-archive
   categories: /categories/ || fa fa-th
   tags: /tags/ || fa fa-tags
-  resume: /resume/ || fa fa-user
 
 menu_settings:
   icons: true
