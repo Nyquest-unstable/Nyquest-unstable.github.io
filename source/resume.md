@@ -1,6 +1,7 @@
 ---
 title: 关于我
 layout: page
+permalink: resume/
 comments: false
 sidebar: false
 ---

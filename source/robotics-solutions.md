@@ -1,6 +1,7 @@
 ---
 title: 机器人控制与预研支持
 layout: page
+permalink: robotics-solutions/
 comments: false
 sidebar: false
 ---

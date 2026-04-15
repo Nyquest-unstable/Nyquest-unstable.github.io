@@ -1,6 +1,7 @@
 ---
 title: GEO 解决方案
 layout: page
+permalink: geo-solutions/
 comments: false
 sidebar: false
 ---

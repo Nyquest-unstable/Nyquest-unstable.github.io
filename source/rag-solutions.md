@@ -1,6 +1,7 @@
 ---
 title: RAG 解决方案
 layout: page
+permalink: rag-solutions/
 comments: false
 sidebar: false
 ---

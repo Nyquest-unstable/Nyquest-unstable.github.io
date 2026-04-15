@@ -1,6 +1,7 @@
 ---
 title: 嵌入式解决方案
 layout: page
+permalink: embedded-solutions/
 comments: false
 sidebar: false
 ---
